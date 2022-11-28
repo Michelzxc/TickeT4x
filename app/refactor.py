@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # -----------------------------------------------------------------------
+"""Defines functions to refactor data."""
 
 
 def make_version(version, date, *args) -> str:

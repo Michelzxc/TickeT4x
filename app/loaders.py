@@ -12,18 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # -----------------------------------------------------------------------
-from app.system_ import run_isplatform
-# from app.refactor import make_version
-# from app.loaders import text_loader
+"""Defines functions that load external data."""
 
-__version__ = "0.1.1"
-__date__ = "2022-11-28"
+import json
 
 
-def main() -> None:
-    """TickeT4x main execute function."""
+def text_loader(file: str, lang: str) -> dict:
+    """Load text entries from json file."""
 
+    with open(file, "rt") as json_file:
+        json_content = json.load(json_file)
 
-if __name__ == "__main__":
-    run_isplatform("win32", "linux")
-    main()
+    lang_text = json_content["lang"].get(lang)
+
+    if lang_text is None:
+        lang_text = json_content["es"]  # Default
+
+    return lang_text
