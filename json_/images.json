@@ -1,0 +1,29 @@
+{
+  "images": {
+    "app_logo": {
+      "path": "ui/images/squares_yellow_black.png",
+      "size": 1
+    },
+
+    "win32": {
+      "path": "ui/images/windows10.png",
+      "size": 1
+    },
+    "linux": {
+      "path": "ui/images/tux_penguin.png",
+      "size": 1
+    },
+    "registry": {
+      "path": "ui/images/registry.png",
+      "size": 1
+    },
+    "python_logo": {
+      "path": "ui/images/python_logo.png",
+      "size": 1
+    },
+    "csv": {
+      "path": "ui/images/csv_file.png",
+      "size": 1
+    }
+  }
+}

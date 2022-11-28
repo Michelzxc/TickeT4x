@@ -1,8 +1,16 @@
 # Registro de cambios
 
+### [v0.1.2](https://github.com/Michelzxc/TickeT4x/)
+
 ---
 
-### [v0.1.1](https://github.com/Michelzxc/TickeT4x/) 28/11/2022
++ Se movieron los archivos .json a la carpeta json_.
++ Se creó el módulo de menus.
++ Añadida función para cargar y ajustar el tamaño de las imágenes.
++ Función main se remplazó por Clase TickeT4x.
++ Actualizado README, algo más concreto.
+
+### [v0.1.1](https://github.com/Michelzxc/TickeT4x/tree/ee7c86da93de201692082c67b7eda254b18d0990) 28/11/2022
 
 ---
 

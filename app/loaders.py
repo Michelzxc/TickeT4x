@@ -29,3 +29,14 @@ def text_loader(file: str, lang: str) -> dict:
         lang_text = json_content["es"]  # Default
 
     return lang_text
+
+
+def image_loader(file: str) -> dict:
+    """Load path images of widgets from json file."""
+
+    with open(file, "rt") as json_file:
+        json_content = json.load(json_file)
+
+    widget_images = json_content["images"]
+
+    return widget_images
