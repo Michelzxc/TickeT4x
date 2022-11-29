@@ -32,9 +32,9 @@ def make_version(version, date, *args) -> str:
         std_date = date[:]
 
     if len(args) == 0:
-        output = "{}-{}".format(std_date, version)
+        output = "{}-v{}".format(std_date, version)
     else:
-        output = "{}-{}:".format(std_date, version)
+        output = "{}-v{}:".format(std_date, version)
         for arg in args:
             output += "{}".format(arg)
 

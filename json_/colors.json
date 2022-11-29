@@ -1,0 +1,31 @@
+{
+  "hex_colors": {
+
+    "unique": {
+      "dark_gray_01": "#343638",
+      "light_gray_01": "#dedede",
+      "light_black_01": "#171717",
+      "white_01": "#ffffff"
+    },
+
+    "normal": {
+      "gray_01": "#999999",
+      "red_01": "#b33636",
+      "green_01": "#26872b",
+      "light_blue_01": "#2a63c7",
+      "yellow_01": "#c2bb38",
+      "orange_01": "#d66800",
+      "blue_01": "#1a10cc"
+    },
+
+    "hover": {
+      "gray_01": "#737373",
+      "red_01": "#852626",
+      "green_01": "#185c1b",
+      "light_blue_01": "#1d4791",
+      "yellow_01": "#999329",
+      "orange_01": "#944800",
+      "blue_01": "#150cad"
+    }
+  }
+}

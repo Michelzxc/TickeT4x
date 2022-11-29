@@ -18,52 +18,67 @@ import customtkinter as ctk
 
 
 class MainMenu(ctk.CTkFrame):
-    def __init__(self, *args, **kwargs):
+    def __init__(self,
+                 *args,
+                 font: str,
+                 **kwargs):
+
         super().__init__(*args, **kwargs)
 
         # =================== widget configuration ======================
 
+        self.font = font
         self.corner_button = 0
         self.height_button = 40
         self.width_label = 50
 
+        self.corner_radius = 0
+
         # ===================== Make components =========================
 
         self.title_label = ctk.CTkLabel(
-            master=self
+            master=self,
+            text_font=(self.font, 16)
         )
 
         self.version_label = ctk.CTkLabel(
             master=self,
-            width=self.width_label,
+            text_font=(self.font, -10),
+            text="",
+            width=self.width_label
         )
 
         self.new_registry_button = ctk.CTkButton(
             master=self,
+            text_font=(self.font, 11),
             height=self.height_button,
             corner_radius=self.corner_button
         )
 
         self.update_button = ctk.CTkButton(
             master=self,
+            text_font=(self.font, 12),
             height=self.height_button,
             corner_radius=self.corner_button
         )
 
         self.configuration_button = ctk.CTkButton(
             master=self,
+            text_font=(self.font, 12),
             height=self.height_button,
             corner_radius=self.corner_button
         )
 
         self.about_button = ctk.CTkButton(
             master=self,
+            text_font=(self.font, 12),
             height=self.height_button,
             corner_radius=self.corner_button
         )
 
         self.exit_button = ctk.CTkButton(
             master=self,
+            text_font=(self.font, 14),
             height=self.height_button,
             corner_radius=self.corner_button
         )

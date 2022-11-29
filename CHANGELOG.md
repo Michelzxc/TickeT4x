@@ -1,6 +1,16 @@
 # Registro de cambios
 
-### [v0.1.2](https://github.com/Michelzxc/TickeT4x/)
+### [v0.1.3](https://github.com/Michelzxc/TickeT4x/) 28/11/2022
+
++ Se agragó un fichero con colores en hexadecimal y una función para cargarlos.
++ En la etiqueta versión se agregó una "v" antes del valor de versión.
++ Insertados los textos y colores en el frame MainMenu.
++ Botón salir funciona.
++ Se preparó soporte para agregar los protocolos.
++ MainMenu se se pega arriba y abajo de la ventana.
++ Clase TickeT4x ahora es hija de CTk.
+
+### [v0.1.2](https://github.com/Michelzxc/TickeT4x/tree/7a2578523f1817815aa824f23bbb08cef13efa73) 28/11/2022
 
 ---
 

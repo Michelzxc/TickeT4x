@@ -40,3 +40,14 @@ def image_loader(file: str) -> dict:
     widget_images = json_content["images"]
 
     return widget_images
+
+
+def color_loader(file: str) -> dict:
+    """Load name and hex color from colors.json."""
+
+    with open(file, "rt") as json_file:
+        json_content = json.load(json_file)
+
+    color_blocks = json_content["hex_colors"]
+
+    return color_blocks
