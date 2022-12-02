@@ -17,8 +17,8 @@
 import json
 
 
-def text_loader(file: str, lang: str) -> dict:
-    """Load text entries from json file."""
+def text_loader(file: str, lang: str) -> tuple:
+    """Load text entries from json file and global font type."""
 
     with open(file, "rt") as json_file:
         json_content = json.load(json_file)
@@ -28,7 +28,9 @@ def text_loader(file: str, lang: str) -> dict:
     if lang_text is None:
         lang_text = json_content["es"]  # Default
 
-    return lang_text
+    font = json_content["font"]
+
+    return lang_text, font
 
 
 def image_loader(file: str) -> dict:

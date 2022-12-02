@@ -1,4 +1,6 @@
 {
+  "font": "Roboto",
+
   "lang": {
 
     "es": {
@@ -59,7 +61,11 @@
       "NAME_INSERT": "insertar",
       "NAME_PREVIUSREG": "Reg. anterior",
       "NAME_USER": "Usuario",
-      "NAME_COMMIT": "confirmar"
+      "NAME_COMMIT": "confirmar",
+      "NAME_CLOSE": "cerrar",
+      "NAME_LICENCE": "licencia",
+
+      "DESC_APP": "Description in coming soon..."
 
     }
   }

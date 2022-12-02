@@ -1,7 +1,19 @@
 {
   "images": {
-    "app_logo": {
+    "app_logo_title": {
       "path": "ui/images/squares_yellow_black.png",
+      "size": 1
+    },
+    "app_logo_about": {
+      "path": "ui/images/squares_yellow_black.png",
+      "size": 100
+    },
+    "info_about_title": {
+      "path": "ui/images/info_01.png",
+      "size": 1
+    },
+    "apache_license_title": {
+      "path": "ui/images/apache.png",
       "size": 1
     },
 

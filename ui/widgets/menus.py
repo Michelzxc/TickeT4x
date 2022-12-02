@@ -20,10 +20,16 @@ import customtkinter as ctk
 class MainMenu(ctk.CTkFrame):
     def __init__(self,
                  *args,
-                 font: str,
+                 font: str | None,
                  **kwargs):
 
         super().__init__(*args, **kwargs)
+
+        # ==================== frame configuration ======================
+
+        self.configure(
+            corner_radius=0
+        )
 
         # =================== widget configuration ======================
 
@@ -31,60 +37,62 @@ class MainMenu(ctk.CTkFrame):
         self.corner_button = 0
         self.height_button = 40
         self.width_label = 50
-
         self.corner_radius = 0
 
-        # ===================== Make components =========================
+        # ======================= make widgets ==========================
 
         self.title_label = ctk.CTkLabel(
             master=self,
-            text_font=(self.font, 16)
+            font=(self.font, 18, "bold"),
         )
 
         self.version_label = ctk.CTkLabel(
             master=self,
-            text_font=(self.font, -10),
+            font=(self.font, 8, "italic"),
             text="",
             width=self.width_label
         )
 
         self.new_registry_button = ctk.CTkButton(
             master=self,
-            text_font=(self.font, 11),
+            font=(self.font, 14),
             height=self.height_button,
             corner_radius=self.corner_button
         )
 
         self.update_button = ctk.CTkButton(
             master=self,
-            text_font=(self.font, 12),
+            font=(self.font, 14),
             height=self.height_button,
             corner_radius=self.corner_button
         )
 
         self.configuration_button = ctk.CTkButton(
             master=self,
-            text_font=(self.font, 12),
+            font=(self.font, 14),
             height=self.height_button,
             corner_radius=self.corner_button
         )
 
         self.about_button = ctk.CTkButton(
             master=self,
-            text_font=(self.font, 12),
+            font=(self.font, 14),
             height=self.height_button,
             corner_radius=self.corner_button
         )
 
         self.exit_button = ctk.CTkButton(
             master=self,
-            text_font=(self.font, 14),
+            font=(self.font, 16),
             height=self.height_button,
             corner_radius=self.corner_button
         )
 
-        # ======================= Grid set ==============================
+        # ===============================================================
 
+        self._set_grid()
+
+    def _set_grid(self):
         # <<< COLUMN 0 >>>
 
         self.grid_rowconfigure(

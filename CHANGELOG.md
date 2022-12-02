@@ -1,6 +1,19 @@
 # Registro de cambios
 
-### [v0.1.3](https://github.com/Michelzxc/TickeT4x/) 28/11/2022
+### [v0.1.4](https://github.com/Michelzxc/TickeT4x/) 01/12/2022
+
+---
+
++ Módulo /ctk renombrado a /nctk por conflictos.
++ imagebox.py ya no es necesario, clase ya incluida en nueva version de CustomTkinter.
++ CustomTkinter actualizado a la version 5.0.0!!!
++ Debido a la nueva versión de CustomTkinter se debe cambiar parte del código.
++ Agregadas más imágenes, textos y colores.
++ Ventana Acerca de casi terminada.
++ Botones salir y acerca de ya tienen funcionalidad.
++ Función text_loader ahora también carga el tipo de fuente general de la aplicación.
+
+### [v0.1.3](https://github.com/Michelzxc/TickeT4x/tree/42968c1f6a72df04e78071162437ef4ae8adeb80) 28/11/2022
 
 + Se agragó un fichero con colores en hexadecimal y una función para cargarlos.
 + En la etiqueta versión se agregó una "v" antes del valor de versión.
