@@ -17,7 +17,7 @@ import tkinter as tk
 import customtkinter as ctk
 
 from app import system_, loaders, refactor
-from ui.widgets import menus, information
+from ui.widgets import menus, information, configuration
 
 __version__ = "0.2.1"
 __date__ = "2022-12-02"
@@ -70,7 +70,8 @@ class TickeT4x(ctk.CTk):
         self.main_menu_frame.configuration_button.configure(
             text=self.text["NAME_CONFIG"],
             fg_color=self.colors["normal"]["light_blue_01"],
-            hover_color=self.colors["hover"]["light_blue_01"]
+            hover_color=self.colors["hover"]["light_blue_01"],
+            command=self.toplevel_mainconfiguration
         )
         self.main_menu_frame.update_button.configure(
             text=self.text["NAME_UPDATE"],
@@ -145,6 +146,24 @@ class TickeT4x(ctk.CTk):
         # Root attributes
         self.title(self.text["NAME_APPLICATION"])
         self.iconphoto(False, self.images["app_logo_title"])
+
+    def toplevel_mainconfiguration(self):
+        """Create CTkTopLevel for configuration frame."""
+
+        window_config = ctk.CTkToplevel(self)
+        window_config.title(self.text["NAME_CONFIG"])
+        window_config.iconphoto(False, self.images["settings_title"])
+
+        configuration_frame = configuration.ConfigurationFrame(
+            master=window_config,
+            font=self.text_font
+        )
+
+        configuration_frame.grid(
+            row=0, column=0,
+            padx=10, pady=10,
+            sticky="nsew"
+        )
 
     def toplevel_about(self):
         """Create a CTkTopLevel for about frame."""

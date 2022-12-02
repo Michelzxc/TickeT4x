@@ -1,6 +1,12 @@
 # Registro de cambios
 
-### [v0.2.0](https://github.com/Michelzxc/TickeT4x/) 01/12/2022
+### [v0.2.1](https://github.com/Michelzxc/TickeT4x/) 02/12/2022
+
+---
+
++ Se creó la clase ConfigurationFrame para el botón de configuración.
+
+### [v0.2.0](https://github.com/Michelzxc/TickeT4x/tree/3b84c97f7e8cc56ddb0d5238c390cd694775e2c8) 01/12/2022
 
 ---
 

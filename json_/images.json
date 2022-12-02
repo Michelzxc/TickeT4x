@@ -16,6 +16,10 @@
       "path": "ui/images/apache.png",
       "size": 1
     },
+    "settings_title": {
+      "path": "ui/images/settings_01.png",
+      "size": 1
+    },
 
     "win32": {
       "path": "ui/images/windows10.png",
