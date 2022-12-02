@@ -1,6 +1,6 @@
 # Registro de cambios
 
-### [v0.1.4](https://github.com/Michelzxc/TickeT4x/) 01/12/2022
+### [v0.2.0](https://github.com/Michelzxc/TickeT4x/) 01/12/2022
 
 ---
 

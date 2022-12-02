@@ -19,8 +19,8 @@ import customtkinter as ctk
 from app import system_, loaders, refactor
 from ui.widgets import menus, information
 
-__version__ = "0.2.0"
-__date__ = "2022-12-01"
+__version__ = "0.2.1"
+__date__ = "2022-12-02"
 
 SOURCE_CODE = "https://github.com/Michelzxc/TickeT4x"
 
@@ -207,14 +207,14 @@ class TickeT4x(ctk.CTk):
     def toplevel_license(self):
         """Create CTkTopLevel to see License."""
 
-        window_licence = ctk.CTkToplevel(self)
-        window_licence.title(self.text["NAME_LICENCE"])
-        window_licence.iconphoto(False, self.images["apache_license_title"])
+        window_license = ctk.CTkToplevel(self)
+        window_license.title(self.text["NAME_LICENCE"])
+        window_license.iconphoto(False, self.images["apache_license_title"])
 
-        window_licence.geometry("600x600")
+        window_license.geometry("600x600")
 
-        licence_text = ctk.CTkTextbox(
-            master=window_licence,
+        license_text = ctk.CTkTextbox(
+            master=window_license,
             corner_radius=0,
             font=(self.text_font, 14)
         )
@@ -225,15 +225,15 @@ class TickeT4x(ctk.CTk):
                 for line in license_file:
                     raw += 1
                     str_raw = "%d.0" % raw
-                    licence_text.insert(index=str_raw, text=line)
+                    license_text.insert(index=str_raw, text=line)
 
         except FileNotFoundError:
             print("LICENSE file is not found.")
 
-        window_licence.grid_rowconfigure(0, weight=1)
-        window_licence.grid_columnconfigure(0, weight=1)
+        window_license.grid_rowconfigure(0, weight=1)
+        window_license.grid_columnconfigure(0, weight=1)
 
-        licence_text.grid(
+        license_text.grid(
             row=0, column=0,
             padx=10, pady=10,
             sticky="nsew"
