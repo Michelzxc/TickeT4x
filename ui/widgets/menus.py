@@ -36,10 +36,10 @@ class MainMenu(ctk.CTkFrame):
         self.font = font
         self.corner_button = 0
         self.width_button = 200
-        self.height_button = 80
+        self.height_button = 50
         self.corner_radius = 0
-        self.button_sep_row = 2
-        self.button_sep_col = 20
+        self.button_sep_row = 15
+        self.button_sep_col = 15
 
         # ======================= make widgets ==========================
 
@@ -77,7 +77,7 @@ class MainMenu(ctk.CTkFrame):
 
         self.exit_button = ctk.CTkButton(
             master=self,
-            font=(self.font, 16),
+            font=(self.font, 14),
             width=self.width_button,
             height=self.height_button,
             corner_radius=self.corner_button

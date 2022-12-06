@@ -4,11 +4,9 @@
 
 ---
 
-+ CustomTkinter actualizado a 5.0.1
++ CustomTkinter actualizado a 5.0.2
 + Nuevo formato para representar las ventanas del programa, botones en bloque.
 + Estructura de archivos fuente mejor ordenada.
-+ 
-
 
 ### [v0.2.1](https://github.com/Michelzxc/TickeT4x/tree/bf0972c79b7c79c3b0246ed9b3f514291db192b1) 2022/12/02
 

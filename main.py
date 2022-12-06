@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # -----------------------------------------------------------------------
-from app import system_, refactor
+from app import system_
 from ui_object import UserInterface
 
 __version__ = "0.3.0"
@@ -22,13 +22,9 @@ ALLOW_DEBUG = False  # Enable checkout tools
 
 
 def main():
-    app_version = refactor.make_version(
+    application = UserInterface(
         version=__version__,
         date=__date__
-    )
-
-    application = UserInterface(
-        app_version=app_version
     )
 
     return application

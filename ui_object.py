@@ -16,20 +16,35 @@ from PIL import Image
 import tkinter as tk
 import customtkinter as ctk
 
-from app import loaders
+from app import loaders, refactor
 from ui.widgets import menus, information, configuration
+
+
 # -----------------------------------------------------------------------
 
 
 class UserInterface(ctk.CTk):
 
     def __init__(self, *args,
-                 app_version=None,
+                 version: str = None,
+                 date: str = None,
                  **kwargs):
 
         super().__init__(*args, **kwargs)
 
-        self.app_version = app_version
+        if (version is not None
+                and date is not None):
+            self.version = version
+            self.date = date
+            self.app_version = refactor.make_version(
+                version=self.version,
+                date=self.date
+            )
+
+        else:
+            self.version = "unknown version"
+            self.date = "unknown date"
+            self.app_version = "unknown version"
 
         self.text_font = None
         self.text = None  # Application Texts
@@ -38,7 +53,8 @@ class UserInterface(ctk.CTk):
         self.colors = None  # Hex colors, is dict of dict
 
         # self.geometry("600x400")
-        self.minsize(600, 400)
+        # self.minsize(600, 400)
+        self.resizable(False, False)
 
         self.data_loader()  # Load Application Data
         self.set_theme()
@@ -230,7 +246,7 @@ class UserInterface(ctk.CTk):
             text=self.text["DESC_APP"]
         )
         about_frame.version.configure(
-            text=__version__
+            text=self.version
         )
         about_frame.source.configure(
             text=self.text["SOURCE_CODE"]
