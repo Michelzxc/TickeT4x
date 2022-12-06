@@ -123,3 +123,74 @@ class AboutFrame(ctk.CTkFrame):
             padx=10, pady=10,
             sticky="e"
         )
+
+
+class TitleFrame(ctk.CTkFrame):
+    """Title name widget for introduction."""
+
+    def __init__(self, *args,
+                 font: str | None,
+                 **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.configure(
+            corner_radius=0
+        )
+
+        self.frame_color = self.cget("fg_color")
+
+        self.application_icon = ctk.CTkButton(
+            master=self,
+            corner_radius=0,
+            fg_color=self.frame_color,
+            border_width=0,
+            width=10,
+            text="",
+            state="disabled"
+        )
+
+        self.application_name = ctk.CTkLabel(
+            master=self,
+            font=(font, 20, "bold"),
+            text=""
+        )
+
+        self.grid_columnconfigure(0, minsize=30)
+        self.grid_rowconfigure(3, weight=1)
+        self.application_icon.grid(
+            row=0, column=1,
+            pady=8,
+            sticky="w"
+        )
+        self.application_name.grid(
+            row=0, column=2,
+            padx=5,
+            sticky="w"
+        )
+
+
+class MainBottomFrame(ctk.CTkFrame):
+    def __init__(self, *args,
+                 font: str | None,
+                 **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.master_color = self.master.cget("fg_color")
+
+        self.configure(
+            corner_radius=0,
+            fg_color=self.master_color
+        )
+
+        self.version_label = ctk.CTkLabel(
+            master=self,
+            font=(font, 10, "italic"),
+            text="",
+            height=5
+        )
+
+        self.grid_columnconfigure(0, weight=1)
+        self.version_label.grid(
+            row=0, column=0,
+            sticky="e"
+        )

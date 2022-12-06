@@ -8,6 +8,10 @@
       "path": "ui/images/squares_yellow_black.png",
       "size": 100
     },
+    "app_logo_title_frame": {
+      "path": "ui/images/squares_yellow_black.png",
+      "size": 50
+    },
     "info_about_title": {
       "path": "ui/images/info_01.png",
       "size": 1

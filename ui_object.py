@@ -16,19 +16,12 @@ from PIL import Image
 import tkinter as tk
 import customtkinter as ctk
 
-from app import system_, loaders, refactor
+from app import loaders
 from ui.widgets import menus, information, configuration
-
-__version__ = "0.2.1"
-__date__ = "2022-12-02"
-
-SOURCE_CODE = "https://github.com/Michelzxc/TickeT4x"
-
-ALLOW_DEBUG = False  # Enable checkout tools
 # -----------------------------------------------------------------------
 
 
-class TickeT4x(ctk.CTk):
+class UserInterface(ctk.CTk):
 
     def __init__(self, *args,
                  app_version=None,
@@ -44,8 +37,8 @@ class TickeT4x(ctk.CTk):
         self.pathsize_images = None  # Raw path and size dictionary
         self.colors = None  # Hex colors, is dict of dict
 
-        self.geometry("870x520")
-        self.minsize(500, 400)
+        # self.geometry("600x400")
+        self.minsize(600, 400)
 
         self.data_loader()  # Load Application Data
         self.set_theme()
@@ -53,15 +46,23 @@ class TickeT4x(ctk.CTk):
         # ==================== main_menu_frame ==========================
 
         # Frame Instance
+        self.title_frame = information.TitleFrame(
+            master=self,
+            font=self.text_font
+        )
+
         self.main_menu_frame = menus.MainMenu(
             master=self,
             font=self.text_font
         )
 
-        # Frame Inject Contents
-        self.main_menu_frame.title_label.configure(
-            text=self.text["NAME_APPLICATION"]
+        self.main_bottom_frame = information.MainBottomFrame(
+            master=self,
+            font=self.text_font
         )
+
+        # Frame Inject Contents
+        # main_menu_frame
         self.main_menu_frame.new_registry_button.configure(
             text=self.text["NAME_NEWREG"],
             fg_color=self.colors["normal"]["light_blue_01"],
@@ -90,17 +91,49 @@ class TickeT4x(ctk.CTk):
             hover_color=self.colors["hover"]["red_03"],
             command=self.destroy
         )
-        self.main_menu_frame.version_label.configure(
+
+        # title_frame
+        self.title_frame.application_name.configure(
+            text=self.text["NAME_APPLICATION"]
+        )
+        self.title_frame.application_icon.configure(
+            image=ctk.CTkImage(
+                dark_image=Image.open(
+                    self.pathsize_images["app_logo_title_frame"]["path"]
+                ),
+                size=(
+                    self.pathsize_images["app_logo_title_frame"]["size"],
+                    self.pathsize_images["app_logo_title_frame"]["size"]
+                )
+            )
+        )
+
+        # main_bottom_frame
+        self.main_bottom_frame.version_label.configure(
             text=self.app_version
         )
 
         # Grid Set
-        self.grid_rowconfigure(0, weight=1)
-        self.grid_columnconfigure(1, weight=1)
+        self.grid_rowconfigure(2, weight=1)
+        self.grid_columnconfigure(0, weight=1)
 
-        self.main_menu_frame.grid(
+        self.title_frame.grid(
             row=0, column=0,
-            sticky="ns"
+            sticky="ew"
+        )
+        self.grid_rowconfigure(1, minsize=20)
+        self.main_menu_frame.grid(
+            row=2, column=0,
+            padx=20,
+            sticky="nsew"
+        )
+        self.main_bottom_frame.grid_rowconfigure(0, minsize=20)
+        self.main_bottom_frame.grid(
+            row=3, column=0,
+            sticky="ew"
+        )
+        self.main_bottom_frame.version_label.configure(
+            padx=25
         )
 
     def data_loader(self) -> None:
@@ -200,7 +233,7 @@ class TickeT4x(ctk.CTk):
             text=__version__
         )
         about_frame.source.configure(
-            text=SOURCE_CODE
+            text=self.text["SOURCE_CODE"]
         )
         about_frame.licence.configure(
             text=self.text["NAME_LICENCE"],
@@ -259,34 +292,3 @@ class TickeT4x(ctk.CTk):
         )
 
         license_text.configure(state="disabled")
-
-
-if __name__ == "__main__":
-    system_.run_isplatform("win32", "linux")
-
-    # ======================= Testing Block =============================
-    if ALLOW_DEBUG:
-        try:
-            import __debug as debug
-            debug.test_a1()
-            debug.check_date_version(
-                date=__date__,
-                version=__version__
-            )
-
-        except ImportError:
-            print("_debug module is not available, "
-                  "debug process aborted.")
-            print("Application is run.\n")
-    # ===================================================================
-
-    APP_VERSION = refactor.make_version(
-        version=__version__,
-        date=__date__
-    )
-    # ======================= Main Application ==========================
-    application = TickeT4x(
-        app_version=APP_VERSION
-    )
-
-    application.mainloop()

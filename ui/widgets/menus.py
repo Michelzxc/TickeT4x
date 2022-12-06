@@ -35,27 +35,18 @@ class MainMenu(ctk.CTkFrame):
 
         self.font = font
         self.corner_button = 0
-        self.height_button = 40
-        self.width_label = 50
+        self.width_button = 200
+        self.height_button = 80
         self.corner_radius = 0
+        self.button_sep_row = 2
+        self.button_sep_col = 20
 
         # ======================= make widgets ==========================
-
-        self.title_label = ctk.CTkLabel(
-            master=self,
-            font=(self.font, 18, "bold"),
-        )
-
-        self.version_label = ctk.CTkLabel(
-            master=self,
-            font=(self.font, 8, "italic"),
-            text="",
-            width=self.width_label
-        )
 
         self.new_registry_button = ctk.CTkButton(
             master=self,
             font=(self.font, 14),
+            width=self.width_button,
             height=self.height_button,
             corner_radius=self.corner_button
         )
@@ -63,6 +54,7 @@ class MainMenu(ctk.CTkFrame):
         self.update_button = ctk.CTkButton(
             master=self,
             font=(self.font, 14),
+            width=self.width_button,
             height=self.height_button,
             corner_radius=self.corner_button
         )
@@ -70,6 +62,7 @@ class MainMenu(ctk.CTkFrame):
         self.configuration_button = ctk.CTkButton(
             master=self,
             font=(self.font, 14),
+            width=self.width_button,
             height=self.height_button,
             corner_radius=self.corner_button
         )
@@ -77,6 +70,7 @@ class MainMenu(ctk.CTkFrame):
         self.about_button = ctk.CTkButton(
             master=self,
             font=(self.font, 14),
+            width=self.width_button,
             height=self.height_button,
             corner_radius=self.corner_button
         )
@@ -84,6 +78,7 @@ class MainMenu(ctk.CTkFrame):
         self.exit_button = ctk.CTkButton(
             master=self,
             font=(self.font, 16),
+            width=self.width_button,
             height=self.height_button,
             corner_radius=self.corner_button
         )
@@ -96,63 +91,54 @@ class MainMenu(ctk.CTkFrame):
         # <<< COLUMN 0 >>>
 
         self.grid_rowconfigure(
-            0, minsize=20
+            0, minsize=self.button_sep_row,
+            weight=1
         )
-
         self.grid_rowconfigure(
-            2, minsize=20
+            2, minsize=self.button_sep_row,
+            weight=1
         )
-
         self.grid_rowconfigure(
-            6, minsize=10,
+            4, minsize=self.button_sep_row,
+            weight=1
+        )
+        self.grid_columnconfigure(
+            0, minsize=self.button_sep_col,
+            weight=1
+        )
+        self.grid_columnconfigure(
+            2, minsize=self.button_sep_col,
+            weight=1
+        )
+        self.grid_columnconfigure(
+            4, minsize=self.button_sep_col,
+            weight=1
+        )
+        self.grid_columnconfigure(
+            6, minsize=self.button_sep_col,
             weight=1
         )
 
-        self.grid_rowconfigure(
-            8, minsize=10
-        )
-
-        self.grid_rowconfigure(
-            10, minsize=30
-        )
-
-        self.title_label.grid(
-            row=1, column=0,
-            pady=10
-        )
-
         self.new_registry_button.grid(
-            row=3, column=0,
-            padx=15, pady=5,
-            sticky="ew"
+            row=1, column=1,
+            sticky="nsew"
         )
 
-        self.update_button.grid(
-            row=4, column=0,
-            padx=15, pady=5,
-            sticky="ew"
-        )
+        # self.update_button.grid(
+        #     row=1, column=3,
+        #     sticky="nsew"
+        # )
         self.configuration_button.grid(
-            row=5, column=0,
-            padx=15, pady=5,
-            sticky="ew"
+            row=1, column=3,
+            sticky="nsew"
         )
 
         self.about_button.grid(
-            row=7, column=0,
-            padx=15,
-            sticky="ew"
+            row=1, column=5,
+            sticky="nsew"
         )
 
         self.exit_button.grid(
-            row=9, column=0,
-            padx=15,
-            ipady=2,
-            sticky="ew"
-        )
-
-        self.version_label.grid(
-            row=11, column=0,
-            padx=5,
-            sticky="e"
+            row=3, column=5,
+            sticky="nsew"
         )
