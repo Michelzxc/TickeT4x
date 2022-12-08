@@ -59,6 +59,13 @@ class UserInterface(ctk.CTk):
         self.data_loader()  # Load Application Data
         self.set_theme()
 
+        # ===================== windows_states ==========================
+
+        #################################################################
+        #       <<< Code to control the state of the   >>>              #
+        #       <<< buttons that generate new windows. >>>              #
+        #################################################################
+
         # ==================== main_menu_frame ==========================
 
         # Frame Instance
@@ -203,11 +210,40 @@ class UserInterface(ctk.CTk):
         window_config.title(self.text["NAME_CONFIG"])
         window_config.iconphoto(False, self.images["settings_title"])
 
+        window_config.minsize(420, 100)
+
         configuration_frame = configuration.ConfigurationFrame(
             master=window_config,
-            font=self.text_font
+            font=self.text_font,
+            color_separator=self.colors["unique"]["black_01"],
+            color_enlb=self.colors["unique"]["dark_gray_01"]
         )
 
+        configuration_frame.label_dir_conf.configure(
+            text=self.text["NAME_DIRCONF"]
+        )
+        configuration_frame.label_dir_usr.configure(
+            text=self.text["NAME_DIRUSER"]
+        )
+        configuration_frame.entry_dir_conf.configure(
+            placeholder_text=self.text["PLACEHOLDER_DIRCONF"]
+        )
+        configuration_frame.entry_dir_usr.configure(
+            placeholder_text=self.text["PLACEHOLDER_DIRUSER"]
+        )
+        configuration_frame.exit.configure(
+            text=self.text["NAME_EXIT"],
+            fg_color=self.colors["normal"]["red_03"],
+            hover_color=self.colors["hover"]["red_03"],
+            command=window_config.destroy
+        )
+        configuration_frame.apply.configure(
+            text=self.text["NAME_APPLY"],
+            fg_color=self.colors["normal"]["celestialwater_01"],
+            hover_color=self.colors["hover"]["celestialwater_01"],
+        )
+
+        window_config.grid_columnconfigure(0, weight=1)
         configuration_frame.grid(
             row=0, column=0,
             padx=10, pady=10,
@@ -280,6 +316,7 @@ class UserInterface(ctk.CTk):
         window_license.iconphoto(False, self.images["apache_license_title"])
 
         window_license.geometry("600x600")
+        window_license.resizable(False, False)
 
         license_text = ctk.CTkTextbox(
             master=window_license,

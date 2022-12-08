@@ -64,6 +64,12 @@
       "NAME_COMMIT": "confirmar",
       "NAME_CLOSE": "cerrar",
       "NAME_LICENCE": "licencia",
+      "NAME_DIRCONF": "dir conf:",
+      "NAME_DIRUSER": "dir user:",
+      "NAME_APPLY": "aplicar",
+
+      "PLACEHOLDER_DIRCONF": "directorio de configuración del programa",
+      "PLACEHOLDER_DIRUSER": "directorio de datos del usuario",
 
       "SOURCE_CODE": "https://github.com/Michelzxc/TickeT4x",
       "DESC_APP": "Description in coming soon..."

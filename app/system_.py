@@ -27,3 +27,23 @@ def run_isplatform(*args: str) -> None:
 
     print("[{}] is incompatible system.".format(sys.platform))
     sys.exit()
+
+
+def default_directories() -> dict:
+    """Return default directories for platform."""
+
+    if sys.platform.startswith("linux"):
+        linux_dirs = {
+            "dir_conf": "directorio usuario y .carpeta del programa",
+            "dir_user": "directorio usuario y documentos"
+        }
+
+        return linux_dirs
+
+    elif sys.platform.startswith("win32"):
+        win32_dirs = {
+            "dir_conf": "appdata/local/carpeta de programa",
+            "dir_user": "directorio usuario y documentos"
+        }
+
+        return win32_dirs

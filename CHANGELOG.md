@@ -1,12 +1,14 @@
 # Registro de cambios
 
-### [v0.3.0](https://github.com/Michelzxc/TickeT4x/) 2022/12/07
+### [v0.3.0](https://github.com/Michelzxc/TickeT4x/tree/003ba2dedb721653aa7a924b0486a59f2df83590) 2022/12/07
 
 ---
 
 + CustomTkinter actualizado a 5.0.2
 + Nuevo formato para representar las ventanas del programa, botones en bloque.
 + Estructura de archivos fuente mejor ordenada.
++ Síntesis de menu de configuración.
++ 
 
 ### [v0.2.1](https://github.com/Michelzxc/TickeT4x/tree/bf0972c79b7c79c3b0246ed9b3f514291db192b1) 2022/12/02
 

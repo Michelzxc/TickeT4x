@@ -5,6 +5,7 @@
       "dark_gray_01": "#343638",
       "light_gray_01": "#dedede",
       "light_black_01": "#171717",
+      "black_01": "#0f0f0f",
       "white_01": "#ffffff"
     },
 
@@ -18,7 +19,8 @@
       "yellow_01": "#c2bb38",
       "orange_01": "#d66800",
       "blue_01": "#1a10cc",
-      "blood": "#630a0a"
+      "blood": "#630a0a",
+      "celestialwater_01": "#008684"
     },
 
     "hover": {
@@ -31,7 +33,8 @@
       "yellow_01": "#999329",
       "orange_01": "#944800",
       "blue_01": "#150cad",
-      "blood": "#400808"
+      "blood": "#400808",
+      "celestialwater_01": "#006d70"
     }
   }
 }
