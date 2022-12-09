@@ -243,6 +243,43 @@ class UserInterface(ctk.CTk):
             hover_color=self.colors["hover"]["celestialwater_01"],
         )
 
+        configuration_frame.label_diurn_flag.configure(
+            text=self.text["NAME_CFGDF"]
+        )
+        configuration_frame.label_nightly_flag.configure(
+            text=self.text["NAME_CFGNF"]
+        )
+        configuration_frame.label_diurn_token.configure(
+            text=self.text["NAME_CFGDT"]
+        )
+        configuration_frame.label_nightly_token.configure(
+            text=self.text["NAME_CFGNT"]
+        )
+        configuration_frame.label_salary_chunk.configure(
+            text=self.text["NAME_CFGSN"]
+        )
+        configuration_frame.label_apport_chunk.configure(
+            text=self.text["NAME_CFGAP"]
+        )
+        configuration_frame.label_diurn_flag_unit.configure(
+            text=self.text["NAME_CFGFUYU"]
+        )
+        configuration_frame.label_nightly_flag_unit.configure(
+            text=self.text["NAME_CFGFUYU"]
+        )
+        configuration_frame.label_diurn_token_unit.configure(
+            text=self.text["NAME_CFGTUYU"]
+        )
+        configuration_frame.label_nightly_token_unit.configure(
+            text=self.text["NAME_CFGTUYU"]
+        )
+        configuration_frame.label_salary_chunk_unit.configure(
+            text=self.text["NAME_CFGPERCENT"] + " "*18
+        )
+        configuration_frame.label_apport_chunk_unit.configure(
+            text=self.text["NAME_CFGPERCENT"] + " "*18
+        )
+
         window_config.grid_columnconfigure(0, weight=1)
         configuration_frame.grid(
             row=0, column=0,

@@ -440,3 +440,18 @@ class ConfigurationFrame(ctk.CTkFrame):
             padx=0, pady=2,
             sticky="nse"
         )
+
+        # binding
+        self.entry_dir_conf.bind("<Escape>", self._defocus)
+        self.entry_dir_usr.bind("<Escape>", self._defocus)
+        self.entry_apport_chunk.bind("<Escape>", self._defocus)
+        self.entry_salary_chunk.bind("<Escape>", self._defocus)
+        self.entry_diurn_flag.bind("<Escape>", self._defocus)
+        self.entry_nightly_flag.bind("<Escape>", self._defocus)
+        self.entry_diurn_token.bind("<Escape>", self._defocus)
+        self.entry_nightly_token.bind("<Escape>", self._defocus)
+
+    def _defocus(self, *args):
+        """Set focus to base frame."""
+
+        self.focus_set()
